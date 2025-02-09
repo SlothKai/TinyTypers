@@ -3,7 +3,6 @@ function getRandomInt(max) {
 }
 
 document.addEventListener("keydown", (event) => {
-  console.log(`Key pressed: ${event.key}`);
   let container = document.getElementById("container");
   let newElement = document.createElement("span");
 
