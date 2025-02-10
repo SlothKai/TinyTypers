@@ -2,8 +2,13 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
+document.getElementById("enter-button").addEventListener("click", function () {
+  document.getElementById("title-screen").style.display = "none"; // Hide title
+  document.getElementById("typing-screen").style.display = "block"; // Show typing area
+});
+
 document.addEventListener("keydown", (event) => {
-  let container = document.getElementById("container");
+  let container = document.getElementById("typing-screen");
   let newElement = document.createElement("span");
 
   let randomColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${
