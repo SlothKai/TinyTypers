@@ -93,6 +93,22 @@ if (!isTouchDevice) {
 //   });
 // }
 
+let lastTouchEnd = 0;
+
+//prevent double tap to zoom
+document.addEventListener(
+  "touchend",
+  function (event) {
+    let now = new Date().getTime();
+    if (now - lastTouchEnd <= 300) {
+      // If two taps happen within 300ms
+      event.preventDefault(); // Prevent zooming
+    }
+    lastTouchEnd = now;
+  },
+  false
+);
+
 if (isTouchDevice) {
   document
     .getElementById("typing-screen")
