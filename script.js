@@ -96,18 +96,32 @@ if (!isTouchDevice) {
 let lastTouchEnd = 0;
 
 //prevent double tap to zoom
+// document.addEventListener(
+//   "touchend",
+//   function (event) {
+//     let now = new Date().getTime();
+//     if (now - lastTouchEnd <= 300) {
+//       // If two taps happen within 300ms
+//       event.preventDefault(); // Prevent zooming
+//     }
+//     lastTouchEnd = now;
+//   },
+//   false
+// );
+
 document.addEventListener(
-  "touchend",
+  "touchstart",
   function (event) {
-    let now = new Date().getTime();
-    if (now - lastTouchEnd <= 300) {
-      // If two taps happen within 300ms
-      event.preventDefault(); // Prevent zooming
+    if (event.touches.length > 1) {
+      event.preventDefault(); // Prevents pinch-to-zoom
     }
-    lastTouchEnd = now;
   },
-  false
+  { passive: false }
 );
+
+document.addEventListener("dblclick", function (event) {
+  event.preventDefault(); // Prevents double-tap zoom
+});
 
 if (isTouchDevice) {
   document
