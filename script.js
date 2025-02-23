@@ -97,11 +97,7 @@ if (isTouchDevice) {
       let newElement = document.createElement("span");
 
       // Generate a random character (instead of keypress)
-      let randomChars =
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
-      let randomChar = randomChars.charAt(
-        Math.floor(Math.random() * randomChars.length)
-      );
+      let randomChar = getRandomCharacter();
 
       // Random color
       let randomColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${
