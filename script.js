@@ -73,41 +73,7 @@ if (!isTouchDevice) {
   });
 }
 
-// if (isTouchDevice) {
-//   // Normal tap
-//   const typingScreen = document.getElementById("typing-screen");
-//   typingScreen.addEventListener("touchstart", (event) => {
-//     const touch = event.touches[0];
-//     const randomChar = getRandomCharacter();
-//     createElement(randomChar, touch.clientX, touch.clientY);
-//   });
-
-//   // Tap and Hold
-//   let holdTimeout;
-//   typingScreen.addEventListener("touchstart", (event) => {
-//     const touch = event.touches[0];
-//     holdTimeout = setInterval(() => {
-//       const randomChar = getRandomCharacter();
-//       createElement(randomChar, touch.clientX, touch.clientY);
-//     }, 200);
-//   });
-// }
-
 let lastTouchEnd = 0;
-
-//prevent double tap to zoom
-// document.addEventListener(
-//   "touchend",
-//   function (event) {
-//     let now = new Date().getTime();
-//     if (now - lastTouchEnd <= 300) {
-//       // If two taps happen within 300ms
-//       event.preventDefault(); // Prevent zooming
-//     }
-//     lastTouchEnd = now;
-//   },
-//   false
-// );
 
 document.addEventListener(
   "touchstart",
