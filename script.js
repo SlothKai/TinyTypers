@@ -12,18 +12,6 @@ document.getElementById("enter-button").addEventListener("click", function () {
   document.getElementById("typing-screen").style.display = "block"; // Show typing area
 });
 
-// window.addEventListener("blur", function () {
-//   setTimeout(() => {
-//     window.focus();
-//   }, 0);
-// });
-
-// document.addEventListener("keydown", function (event) {
-//   if (event.altKey || event.ctrlKey || event.key === "Tab") {
-//     event.preventDefault();
-//   }
-// });
-
 document.addEventListener("keydown", function (event) {
   event.preventDefault(); // Block all default behavior
 });
